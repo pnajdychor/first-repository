@@ -9,7 +9,7 @@ on:
 
 jobs:
   echo:
-    name: "zobacz co mnie ztriggerowalo ${{ github.event_name}} ${GITHUB_EVENT_NAME}"
+    name: "zobrancz co mnie ztriggerowalo ${{ github.event_name}} ${GITHUB_EVENT_NAME}"
     runs-on: ubuntu-latest
     steps:
       - name: Show the trigger ${{ github.event_name}} ${GITHUB_EVENT_NAME}
