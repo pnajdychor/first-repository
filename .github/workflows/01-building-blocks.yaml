@@ -1,16 +1,30 @@
 name: 01 - Building Blocks v1
 
 on:
-  push
+  push:
+    branches: [feature/cw01]
+  workflow_dispatch:
 
 jobs:
   echo-hello:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        run: echo "Hello, World!"
+        run: 
+          echo "Hello, World!"
+          sleep 5
 
   echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failed step
+        run: |
+          echo "I will fail"
+          exit 1  # dowolny kod != 0 spowoduje błąd kroku
+      - name: Say goodbye
+        run: echo "Goodbye!"
+
+  echo-goodbye2:
     runs-on: ubuntu-latest
     steps:
       - name: Failed step
