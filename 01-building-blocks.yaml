@@ -19,4 +19,4 @@ jobs:
           exit 1  # dowolny kod != 0 spowoduje błąd kroku
       - name: Say goodbye
         run: echo "Goodbye!"
-        # Dodaj inne kroki i zobacz jak zachowuje sie github actions jako osobne joby oraz kroki w tym jobie.
+        # Dodaj  inne kroki i zobacz jak zachowuje sie github actions jako osobne joby oraz kroki w tym jobie.
