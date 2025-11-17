@@ -4,14 +4,14 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "5 * * * *"
   workflow_dispatch:
 
 jobs:
   echo:
-    name: "zobacz co mnie ztriggerowalo"
+    name: "zobacz co mnie ztriggerowalo ${{ github.event_name}} ${GITHUB_EVENT_NAME}"
     runs-on: ubuntu-latest
     steps:
-      - name: Show the trigger
+      - name: Show the trigger ${{ github.event_name}} ${GITHUB_EVENT_NAME}
         run: |
-          echo "Event name: ${{ github.event_name}}"
+          echo "Event name: ${{ github.event_name}} ${GITHUB_EVENT_NAME}"
