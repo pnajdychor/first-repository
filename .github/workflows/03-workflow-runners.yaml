@@ -26,9 +26,9 @@ jobs:
 
   mac-echo:
     name: "This job is running on an MACOS runner"
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
       - name: This step is running on an MACOS runner
-        shell: bash
+#        shell: bash
         run: |
           echo $RUNNER_OS
