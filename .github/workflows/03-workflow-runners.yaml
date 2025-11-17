@@ -1,0 +1,33 @@
+name: 03 - Workflow Runners
+
+on:
+  push:
+    branches:
+      - branch_pn
+
+jobs:
+  ubuntu-echo:
+    name: "This job is running on an Ubuntu runner"
+    runs-on: ubuntu-latest
+    steps:
+      - name: This step is running on an Ubuntu runner
+        run: |
+          echo $RUNNER_OS
+          uname
+
+  windows-echo:
+    name: "This job is running on an Windows runner"
+    runs-on: windows-latest
+    steps:
+      - name: This step is running on an Windows runner
+        shell: bash
+        run: |
+          echo $RUNNER_OS
+
+  mac-echo:
+    name: "This job is running on an MACOS runner"
+    runs-on: windows-latest
+    steps:
+      - name: This step is running on an MACOS runner
+        run: |
+          echo $RUNNER_OS
