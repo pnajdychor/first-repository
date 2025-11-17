@@ -1,8 +1,8 @@
 name: 01 - Building Blocks v1
 
 on:
-  push:
-    branches: [feature/cw01]
+#  push:
+#    branches: [feature/cw01]
   workflow_dispatch:
 
 jobs:
