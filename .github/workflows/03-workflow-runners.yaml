@@ -29,5 +29,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: This step is running on an MACOS runner
+        shell: bash
         run: |
           echo $RUNNER_OS
