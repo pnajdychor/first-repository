@@ -1,8 +1,9 @@
-name: 04 - Workflow uses actions
+name: 04v01 - Workflow uses actions with nodejs.
 
 on:
+ #push:
   workflow_dispatch:
-
+  
 jobs:
   build:
     name: Build and Test with Node.js
@@ -10,11 +11,39 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./CWIECZENIA/04
+        working-directory: ./CWICZENIA/04-praca-z-zewnetrzymi-akcjami/react-app
     steps:
-      - name: use actions/checkout action
+      # uses nie korzysta z default working-directory  
+      - name: Use actions/checkout action
         uses: actions/checkout@v5
-      - name: pokaz zawartosc katalogu
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Sprawdz wersje nodejs
         run: |
-          ls -la
-        
+          node -v
+          npm -v
+      
+
+  build-windows:
+    name: Build and Test with Node.js on Windows
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./CWICZENIA/04-praca-z-zewnetrzymi-akcjami/ #react-app-kurczaczek
+    steps:
+      # uses nie korzysta z default working-directory  
+      - name: Use actions/checkout action
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Sprawdz wersje nodejs
+        run: |
+          node -v
+          npm -v
+      - name: Install dependencies
+        run: npm ci
