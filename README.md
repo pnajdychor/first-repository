@@ -1,0 +1,2 @@
+zmiana na main
+poprawiony
