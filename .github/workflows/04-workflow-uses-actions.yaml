@@ -1,0 +1,11 @@
+name: 04 - Workflow uses actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ubuntu-echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pokaz katalog roboczy
+        run: ls -la
