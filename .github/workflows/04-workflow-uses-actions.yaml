@@ -4,8 +4,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  ubuntu-echo:
+  build:
+    name: Build and Test with Node.js
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./CWIECZENIA/04
     steps:
-      - name: pokaz katalog roboczy
-        run: ls -la
+      - name: use actions/checkout action
+        uses: actions/checkout@v5
+      - name: pokaz zawartosc katalogu
+        run: |
+          ls -la
+        
