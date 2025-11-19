@@ -1,12 +1,14 @@
 name: "07 – Using Expressions"
 
 on:
-  push:
+ # push:
   workflow_dispatch:
     inputs:
       vardebug:
+        description: "zmienna"
         type: boolean
         default: false
+        required: true
 
 jobs:
   echo:
