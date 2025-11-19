@@ -1,0 +1,28 @@
+name: "06 – Contexts"
+
+on:
+  workflow_dispatch:
+    inputs:
+      city:
+        description: "Miasto"
+        type: string
+        default: 'Warsaw'
+        required: true
+
+env:
+  MY_KLUCZYK: ${{secrets.API_KEY}}
+
+jobs:
+  echo-data:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./CWIECZENIA/06-context/pogoda
+    steps:
+      - name: Repo
+        uses: actions/checkout@v3
+          
+      - name: Wyswietl pogode
+        run: |
+          chmod +x ./start.sh
+          ./start.sh "${{inputs.city != '' && inputs.city || 'Warsaw'}} ||" "${{env.MY_KLUCZYK}}" | tee -a "$GITHUB_STEP_SUMMARY"
