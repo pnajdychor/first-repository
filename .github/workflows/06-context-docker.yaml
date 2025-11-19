@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  WORKDIR: ./pogoda
+  WORKDIR: ./pogoda_python_flusk
   TEST_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/python_pogoda:test
   HUB_IMAGE_BASE: ${{ secrets.DOCKERHUB_USERNAME }}/python_pogoda
 
