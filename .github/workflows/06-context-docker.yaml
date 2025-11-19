@@ -78,7 +78,7 @@ jobs:
         run: |
           set -e
           echo "Testowanie endpointu /weather..."
-          curl -f "http://localhost:8000/weather?city=Warsaw&api_key=${{ secrets.OPENWEATHER_API_KEY }}"
+          curl -f "http://localhost:8000/weather?city=Warsaw&api_key=${{ secrets.API_KEY }}"
           echo
           echo "OK - endpoint /weather zwrócił odpowiedź 2xx."
 
